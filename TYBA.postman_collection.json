@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "8322f0b3-1804-42be-9980-9592b89ae4e0",
+		"name": "TYBA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36002116"
+	},
+	"item": [
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "PATCH",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJuYW1lIjoidGVzdDMxIiwiaWF0IjoxNzE3NTY4OTUyLCJleHAiOjE3MTc1NzI1NTJ9.c6Qb8F3e_HPjqm5qE7ZvuFJFTdarr8pXmrYQiVBJg5c"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test31\",\r\n    \"password\":\"password2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/user/"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoidGVzdDMxMSIsImlhdCI6MTcxNzU2OTA5NCwiZXhwIjoxNzE3NTcyNjk0fQ.Dy2sym0OayBLwlnbvgGZ5AKD_AD9tgvAz7T-5O-Ed1M"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:3000/user/3"
+					},
+					"response": []
+				},
+				{
+					"name": "GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsInVzZXJuYW1lIjoidGVzdDMxMSIsImlhdCI6MTcxNzU2OTA5NCwiZXhwIjoxNzE3NTcyNjk0fQ.Dy2sym0OayBLwlnbvgGZ5AKD_AD9tgvAz7T-5O-Ed1M"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/user/"
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJuYW1lIjoidGVzdDMiLCJpYXQiOjE3MTc1MzA3NTAsImV4cCI6MTcxNzUzNDM1MH0.CHwxstZrsiznv9QQtwpgojk5c0XrqwDQp5sVjqw1Ya4"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/user/all"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE3MTc1MzA0MjEsImV4cCI6MTcxNzUzNDAyMX0.3MqzlW2JpcN0_AhIGySjrmLx8WykiQ5hLFpoKJVwvqs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test1\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/login"
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE3MTc1MzE0NDgsImV4cCI6MTcxNzUzNTA0OH0.y79xyya47Z5F9F3j99l6DuXxsH1RswDZnEswwmTjzbk"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"url": "localhost:3000/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "SIGNUP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE3MTc1MzA0MjEsImV4cCI6MTcxNzUzNDAyMX0.3MqzlW2JpcN0_AhIGySjrmLx8WykiQ5hLFpoKJVwvqs"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test1\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:3000/signup"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRANSACTIONS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE3MTc1MzE0NDgsImV4cCI6MTcxNzUzNTA0OH0.y79xyya47Z5F9F3j99l6DuXxsH1RswDZnEswwmTjzbk"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:3000/transactions"
+			},
+			"response": []
+		},
+		{
+			"name": "PLACES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdDEiLCJpYXQiOjE3MTc1MzIyNjcsImV4cCI6MTcxNzUzNTg2N30.40440wfCQjLQPhkSVsAt4GjOsBWFCZO86_o2Jqrue7k"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"location\":\"New York\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/places/?location=Bogota",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"places",
+						""
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Bogota"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,19 +1,19 @@
+//Transaction Controller: Logs every transaction, GETS all transactions
+
 const { initialiseTransactionModel } = require('../../Model/Transactions/Transaction');
-const { findAllTransactions } = require('../../Model/Transactions/Transaction');
 
-let TransactionModel; // Define TransactionModel variable
+let TransactionModel; 
 
-// Initialize the TransactionModel with the Sequelize instance
+
 const initialiseTransaction = (sequelize) => {
   TransactionModel = initialiseTransactionModel(sequelize);
 };
 
 async function createTransactionLog(transactionType, user,description) {
     try {
-      // Create a new transaction log record in the database
-      console.log(transactionType);
-      console.log(user);
-      console.log(description);
+      //console.log(transactionType);
+      //console.log(user);
+      //console.log(description);
   
       const transactionlog = await TransactionModel.create({
         transactionType,
@@ -48,7 +48,7 @@ async function getAllTransactions(req, res) {
 }
   
 module.exports = {
-  initialiseTransaction, // Export the function to initialize the TransactionModel
+  initialiseTransaction, 
   createTransactionLog,
   getAllTransactions
 };

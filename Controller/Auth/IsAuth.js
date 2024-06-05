@@ -1,7 +1,9 @@
+//Authentication check middleware: Checks if user is authenticated
+
 const jwt = require("jsonwebtoken");
 const { jwtSecret } = require("../../config");
 
-// Array to store invalidated tokens
+
 const blacklistedTokens = [];
 
 module.exports = {

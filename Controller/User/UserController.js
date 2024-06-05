@@ -1,3 +1,5 @@
+//User Controller: GET, UPDATE, DELETE users
+
 const UserModel = require("./../../Model/User/User");
 const { createTransactionLog } = require("../Transactions/TransactionController");
 
@@ -5,15 +7,16 @@ module.exports = {
   getUser: async (req, res) => {
     try {
       const {
-        user: { userId },
+        params: { userId },
       } = req;
-
+      console.log(userId);
       const user = await UserModel.findUser({ id: userId });
-      await createTransactionLog("GET", user.username, "OK");
+      console.log(user)
+      await createTransactionLog("GET", userId, "OK");
       
       return res.status(200).json({
         status: true,
-        data: user.toJSON(),
+        data: user,
       });
     } catch (err) {
       console.log(err);
@@ -32,7 +35,7 @@ module.exports = {
       } = req;
       
       if (!Object.keys(payload).length) {
-        await createTransactionLog("UPDATE", userId, "ERROR: Body is empty.");
+        await createTransactionLog("UPDATE", "ALL_USERS", "ERROR: Body is empty.");
         return res.status(400).json({
           status: false,
           error: {
@@ -65,14 +68,17 @@ module.exports = {
 
       await UserModel.deleteUser({ id: userId });
       await createTransactionLog("DELETE", userId, "OK");
+  
+      
 
       return res.status(200).json({
         status: true,
         data: {
-          numberOfUsersDeleted: 1, // Assuming only one user is deleted
+          numberOfUsersDeleted: 1, 
         },
       });
     } catch (err) {
+      console.log(err)
       return res.status(500).json({
         status: false,
         error: err,
@@ -83,6 +89,7 @@ module.exports = {
   getAllUsers: async (req, res) => {
     try {
       const users = await UserModel.findAllUsers(req.query);
+      //console.log(users)
       await createTransactionLog("GETALL", "ALL_USERS", "OK");
 
       return res.status(200).json({
@@ -90,6 +97,7 @@ module.exports = {
         data: users,
       });
     } catch (err) {
+      console.log(err)
       return res.status(500).json({
         status: false,
         error: err,

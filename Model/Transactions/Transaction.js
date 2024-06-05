@@ -1,3 +1,4 @@
+//Transaction Model
 const { Sequelize, DataTypes } = require("sequelize");
 
 const TransactionModel = {

@@ -1,6 +1,4 @@
 const router = require("express").Router();
-
-// Controller Imports
 const PlacesController = require("./PlacesController");
 const isAuth = require("../Auth/IsAuth");
 

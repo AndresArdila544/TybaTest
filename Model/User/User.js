@@ -1,3 +1,4 @@
+//User Model
 const { DataTypes } = require("sequelize");
 
 const UserModel = {

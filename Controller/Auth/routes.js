@@ -1,6 +1,4 @@
 const router = require("express").Router();
-
-// Controller Imports
 const AuthController = require("./AuthController");
 
 router.post(

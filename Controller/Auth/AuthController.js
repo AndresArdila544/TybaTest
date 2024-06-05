@@ -1,3 +1,5 @@
+//Authentication Controller: Generates an Access Token, REGISTER, LOGIN, LOGOUT
+
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 
@@ -9,7 +11,6 @@ const { createTransactionLog } = require("../Transactions/TransactionController"
 
 const { invalidateToken } = require('./IsAuth');
 
-// Generates an Access Token using username and userId for the user's authentication
 const generateAccessToken = (username, userId) => {
   return jwt.sign(
     {
@@ -23,14 +24,10 @@ const generateAccessToken = (username, userId) => {
   );
 };
 
-// Encrypts the password using SHA256 Algorithm, for enhanced security of the password
 const encryptPassword = (password) => {
-  // We will hash the password using SHA256 Algorithm before storing in the DB
-  // Creating SHA-256 hash object
+
   const hash = crypto.createHash("sha256");
-  // Update the hash object with the string to be encrypted
   hash.update(password);
-  // Get the encrypted value in hexadecimal format
   return hash.digest("hex");
 };
 
@@ -56,7 +53,6 @@ module.exports = {
         Object.assign(payload, { password: encryptedPassword })
       );
 
-      // Generating an AccessToken for the user
       const accessToken = generateAccessToken(payload.username, user.id);
 
       // Creating a transaction log
@@ -130,7 +126,6 @@ module.exports = {
       const authHeader = req.headers['authorization'];
   
       if (!authHeader || !authHeader.startsWith('Bearer')) {
-        // If no or invalid authorization header provided, return success response
         return res.status(200).json({
           status: true,
           message: "Logout successful",
@@ -139,10 +134,8 @@ module.exports = {
   
       const token = authHeader.split(' ')[1];
   
-      // Invalidate the token
       invalidateToken(token);
   
-      // Return success response
       return res.status(200).json({
         status: true,
         message: "Logout successful",

@@ -1,12 +1,8 @@
 const router = require("express").Router();
-
-// Middleware Imports
 const isAuth = require("../Auth/IsAuth");
-
-// Controller Imports
 const UserController = require("./UserController");
 
-router.get("/", [isAuth.check], UserController.getUser);
+router.get("/:userId", [isAuth.check], UserController.getUser);
 
 router.patch(
   "/",
@@ -17,7 +13,7 @@ router.patch(
 );
 
 router.get(
-  "/all",
+  "/",
   [isAuth.check],
   UserController.getAllUsers
 );
